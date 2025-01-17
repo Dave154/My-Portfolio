@@ -3,19 +3,37 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #000319;
   --foreground: #171717;
+  --lightblue: #3b82f6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html{
+  scroll-behavior: smooth;
+}
+
+
+main{
+  scroll-snap-type: y mandatory ;
+}
+
+section{
+  scroll-snap-align: start;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .border-gradient {
+    @apply bg-gradient-to-r from-blue-800 via-green-800 to-blue-500;
+  }
+}
+@layer base{
+  section{
+    @apply h-screen flex justify-center items-center w-full
+  }
 }
