@@ -11,7 +11,8 @@ export default {
   		colors: {
   			background: 'var(--background)',
   			foreground: 'var(--foreground)',
-			lightblue:'var(--lightblue)'
+			lightblue:'var(--lightblue)',
+			purple:'var(--purple)'
   		},
 		  backgroundImage: {
 			'grid1': "url('/bg1.jpg')",
