@@ -32,13 +32,11 @@ const Header = () => {
 
   return (
     <header className='fixed w-full  p-2 top-0 z-50'>
-        <Link href='/' className="absolute hidden md:flex flex-col w-12 h-32 p-2 items-center justify-between bg-blue-400/70 rotate-120 z-50  rounded-full">
-            {['D','A',"v",'e'].map(item=>{
-                return <span className='uppercase font-extrabold '>{item}</span>
-            })}
+        <Link href='/' className="absolute hidden md:block font-extrabold text-3xl bottom-1  text-transparent border-gradient bg-clip-text ">
+            {'/>'}
         </Link>
 
-        <nav className="max-w-md relative rounded-full border border-gray-300/50 py-3 px-8 mx-auto mt-5 backdrop-blur-xl flex justify-between items-center 
+        <nav className="max-w-md relative rounded-full border border-gray-300/50 py-3 px-8 mx-auto mt-5 backdrop-blur-2xl bg-gray-800/40 flex justify-between items-center 
         after:content-[''] after:absolute after:-bottom-[1px] after:left-6 after:border-gradient after:w-36 after:h-[1px]">
             {
                 nav.map((item,i)=>{

@@ -11,12 +11,12 @@ const Footer = () => {
          name:'Whatsapp'
        },
        {
-         src:'/whatsapp.png',
-         name:'Whatsapp'
+         src:'/x.png',
+         name:'X'
        },
        {
-         src:'/whatsapp.png',
-         name:'Whatsapp'
+         src:'/github.png',
+         name:'Github'
        },
     ]
 

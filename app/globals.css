@@ -53,7 +53,7 @@ body {
     after:absolute after:-bottom-10 after:w-full after:h-32 
     from-background via-green-900/75 to-transparent
     before:absolute before:w-16 before:h-1/2 before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:rotate-45
-    before:content-[''] before:bg-[linear-gradient(transparent,#4ebb84,transparent)]  before:shadow-2xl before:-z-10
+    before:content-[''] before:bg-[linear-gradient(transparent,#4ebb849e,transparent)]  before:shadow-2xl before:-z-10
     before:filter before:blur-3xl
   }
 }

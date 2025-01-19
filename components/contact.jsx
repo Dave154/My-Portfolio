@@ -4,7 +4,7 @@ import { MessageSquareTextIcon,  } from 'lucide-react'
 
 const Contact = () => {
   return (
-        <section className="flex flex-col justify-end " id='Contact'>
+        <section className="flex flex-col justify-end min-h-20 p-3" id='Contact'>
             <div className="text-center space-y-10">
                 <h2 className="text-4xl font-bold">Ready to take <span className="text-purple">your</span>  digital <br />  presence to the next level?</h2>
                 <p className=""> Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>

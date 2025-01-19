@@ -5,24 +5,25 @@ import {
     TooltipTrigger,
   } from "@/components/ui/tooltip"
 import { Link2, Link2Off } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 const Socials = () => {
     const socials= [
         {
-            icon: <Link2Off/> ,
+            icon: '/instagram.png',
             name:'Instagram',
             link:''
 
         },
         {
-            icon: <Link2 /> ,
-            name:'Instagram',
+            icon: '/x.png',
+            name:'X formerly twitter',
             link:''
 
         },
         {
-            icon: <Link2Off/> ,
-            name:'Instagram',
+            icon: '/whatsapp.png',
+            name:'whatsapp',
             link:''
 
         },
@@ -42,7 +43,18 @@ const Socials = () => {
                     const {icon,name,link}=item
                     return  <TooltipProvider key={index} >
                     <Tooltip>
-                        <TooltipTrigger className=" hover:text-blue-900 text-gray-100">{icon} </TooltipTrigger>
+                        <TooltipTrigger className=" hover:text-blue-900 text-gray-100">
+                            <Link href={link}>
+                            <Image
+                                src={icon}
+                                alt={name}
+                                width={30}
+                                height={30}
+
+                        />
+                            </Link>
+                        
+                     </TooltipTrigger>
                         <TooltipContent className="rounded-full shadow-md" sideOffset={5}>
                         <p className="capitalize">{name}</p> 
                         </TooltipContent>

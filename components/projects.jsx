@@ -7,9 +7,9 @@ const Projects = () => {
 
     const projects= [
         {
-            image:'/bg1.jpg',
-            title:'Title',
-            desc:'lorem10',
+            image:'/navigo.png',
+            title:'Navigo',
+            desc:'This is a test description for styling purposes, Remember to gget original text contents before finale deployment',
             link:'',
             tools:[
                 {
@@ -20,22 +20,30 @@ const Projects = () => {
 
         },
         {
-            image:'/bg1.jpg',
-            title:'Title',
-            desc:'lorem10',
-            link:'',
+            image:'/trovemart.png',
+            title:'Trovemart',
+            desc:'A customer self-service shopping app for supermarkets, built with React and Firebase, featuring QR-based order verification and user management tools.',
+            link:'https://trovemart.vercel.app',
             tools:[
                 {
-                    name:'',
-                    image:'',
+                    name:'React',
+                    image:'/react.png',
+                },
+                {
+                    name:'Redux',
+                    image:'/redux.png',
+                },
+                {
+                    name:'Firebase',
+                    image:'/redux.png',
                 },
             ]
 
         },
         {
-            image:'/bg1.jpg',
-            title:'Title',
-            desc:'lorem10',
+            image:'/walmart.png',
+            title:'Walmart Clone',
+            desc:'',
             link:'',
             tools:[
                 {
