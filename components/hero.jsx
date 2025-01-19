@@ -5,8 +5,9 @@ import GradientButton from './gradientbutton'
 
 const Hero = () => {
   return (
-    <section className='min-h-screen bg-grid1 bg-cover bg-center relative bottom_top'>
-        <div className="text-center flex flex-col justify-center items-center gap-5 backdrop-blur-sm h-full w-full px-3 ">
+    <section className='h-screen bg-grid1 bg-cover bg-center relative bottom_top  blurred blurred_blue' >
+
+        <div className="text-center flex flex-col justify-center items-center gap-5 backdrop-blur-sm h-full w-full px-3 relative">
             <Link href='https://github.com/Dave154/' className="flex space-x-4 items-center mb-6"> 
                 <Image
                     src={'/github.png'}
@@ -16,7 +17,7 @@ const Hero = () => {
                 />    
                 <span className="font-roboto">My Github Profile</span>
              </Link>
-             <h1 className="font-extrabold text-3xl md:text-5xl lg:text-6xl md:font-roboto">Your Ideas, My Code, <br /> Let's Create <span className="text-lightblue">Something Extraordinary</span> </h1>
+             <h1 className="font-extrabold text-3xl md:text-5xl lg:text-6xl md:font-roboto">Your Ideas, My Code, <br /> Let's Create <span className="border-gradient text-transparent bg-clip-text ">Something Extraordinary</span> </h1>
              <p className="text-xs md:text-lg text-semibold ">Hello, I’m David Okpe, a Front-End Developer passionate about transforming ideas into elegant, <br /> user-centric web experiences.</p>      
                 <GradientButton 
                 text='Resume' 

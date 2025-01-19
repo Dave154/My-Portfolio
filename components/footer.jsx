@@ -22,8 +22,8 @@ const Footer = () => {
 
   return (
     <footer className='p-3 w-full flex justify-center'>
-        <div className="flex flex-col justify-center w-full max-w-3xl md:flex-row md:justify-between gap-4  items-center">
-            <p className="">Made by {`Dave/>`} {year} </p>
+        <div className="flex flex-col justify-center w-full max-w-6xl md:flex-row md:justify-between gap-4  items-center">
+            <p className="text-sm">Made by {`Dave />`} {year} </p>
 
             <div className="flex gap-4">
                 {socials.map((item,index)=>{

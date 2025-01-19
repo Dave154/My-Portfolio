@@ -14,6 +14,9 @@ export default {
 			lightblue:'var(--lightblue)',
 			purple:'var(--purple)'
   		},
+		  transform: {
+			'fallback': 'perspective(500px) rotateX(10deg)',
+		  },
 		  backgroundImage: {
 			'grid1': "url('/bg1.jpg')",
 		  },

@@ -38,19 +38,45 @@ body {
   .bottom_top{
     @apply after:bg-gradient-to-t
   }
+  .blurred{
+    @apply before:absolute before:w-16 before:h-[80%] before:top-2 before:left-1 before:-rotate-45
+    before:content-[''] before:bg-[linear-gradient(transparent,#4ebb8494,transparent)]  before:shadow-2xl before:z-10
+    before:filter before:blur-3xl
+  }
+  .blurred_blue{
+    @apply before:bg-[linear-gradient(transparent,blue,transparent)]
+  }
 }
 @layer base{
   section{
-    @apply h-screen flex justify-center items-center w-full relative 
-    after:absolute after:-bottom-10 after:w-full after:h-32  
-    from-background via-green-800/65 to-transparent
-    before:absolute before:-bottom-10 before:w-full before:h-32 before:top-1/2 before:left-1/2 before:rotate-45
-    before:from-background before:via-green-800/65 before:to-transparent
+    @apply min-h-screen flex justify-center items-center w-full relative
+    after:absolute after:-bottom-10 after:w-full after:h-32 
+    from-background via-green-900/75 to-transparent
+    before:absolute before:w-16 before:h-1/2 before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:rotate-45
+    before:content-[''] before:bg-[linear-gradient(transparent,#4ebb84,transparent)]  before:shadow-2xl before:-z-10
+    before:filter before:blur-3xl
   }
 }
 
-
-
+.fallback{
+  transition: all .5s ease-in-out;
+}
+.line_up{
+  transform: perspective(1000px) rotateX(-45deg);
+  transform-origin: center bottom;
+}
+.text_up{
+  transform: perspective(-1400px) rotateX(-45deg);
+  transform-origin: bottom center;
+}
+.circle_down{
+  transform: perspective(700px) rotateX(60deg);
+  transform-origin: bottom center;
+}
+.fallback:hover{
+  transform: perspective(700px) rotateX(15deg);
+  transform-origin: center bottom;
+}
 ::-webkit-scrollbar{
   width: 5px;
   background: var(--background);

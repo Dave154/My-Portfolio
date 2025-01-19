@@ -6,8 +6,8 @@ const Contact = () => {
   return (
         <section className="flex flex-col justify-end " id='Contact'>
             <div className="text-center space-y-10">
-                <h2 className="text-3xl font-bold">Ready to take <span className="text-purple">your</span>  digital <br />  presence to the next level?</h2>
-                <p className=""> Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum praesentium magnam unde atque exercitationem animi. </p>
+                <h2 className="text-4xl font-bold">Ready to take <span className="text-purple">your</span>  digital <br />  presence to the next level?</h2>
+                <p className=""> Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                 <GradientButton 
                 text={`Let's get in touch` }
                 icon={<MessageSquareTextIcon />} 
