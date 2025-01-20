@@ -46,6 +46,9 @@ body {
   .blurred_blue{
     @apply before:bg-[linear-gradient(transparent,blue,transparent)]
   }
+  .about_box{
+    @apply border border-gray-500/40 rounded-xl backdrop-blur-xl overflow-hidden
+  }
 }
 @layer base{
   section{
