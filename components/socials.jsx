@@ -1,3 +1,4 @@
+'use client';
 import {
     Tooltip,
     TooltipContent,
@@ -7,6 +8,7 @@ import {
 import { Link2, Link2Off } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import {motion} from 'framer-motion'
 const Socials = () => {
     const socials= [
         {
@@ -16,7 +18,7 @@ const Socials = () => {
 
         },
         {
-            icon: '/x.png',
+            icon: '/twitter.png',
             name:'X formerly twitter',
             link:''
 
@@ -28,7 +30,7 @@ const Socials = () => {
 
         },
         {
-            icon: <Link2 /> ,
+            icon: '/github.svg' ,
             name:'Instagram',
             link:''
 
@@ -36,8 +38,12 @@ const Socials = () => {
         
     ]
   return (
-    <aside className='hidden md:inline fixed w-16 h-44 right-4 top-1/2 bg-lightblue rounded-full'>
-        <ul className="flex flex-col h-full justify-between items-center py-3">
+    <motion.aside
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, ease: "easeIn" }}
+    className='hidden md:inline fixed w-16 right-4 top-1/2 bg-lightblue rounded-full z-50'>
+        <ul className="flex flex-col h-full justify-between items-center py-3 gap-5">
             {
                 socials.map((item,index)=>{
                     const {icon,name,link}=item
@@ -65,7 +71,7 @@ const Socials = () => {
         </ul>
        
 
-    </aside>
+    </motion.aside>
   )
 }
 

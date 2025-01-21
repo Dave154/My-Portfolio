@@ -9,12 +9,9 @@ const Project = ({project}) => {
   return (
     <article className='relative group'>
         <div className="absolute opacity-0 z-10 transition-opacity duration-1000 group-hover:opacity-100 top-1 left-1/2 -translate-x-1/2 flex flex-col items-center ">
-
-        <div className="rounded-full  shadow-sm shadow-gray-100/30  py-1 px-2 text-xs bg-lightblue text_up relative top-20 z-20">{link}</div>
-       
+        <div className="rounded-full  shadow-sm shadow-gray-100/30  py-1 px-2 text-xs bg-lightblue text_up relative top-20 z-20">{link}</div> 
 </div>
     <Link href={link} className=' backdrop-blur-2xl border  relative border-gray-600/80 rounded-xl p-5 grid gap-4 fallback cursor-pointer'>
-            
         <div className="bg-background relative rounded-xl border border-gray-800/90 overflow-hidden">
     
         <Image 
@@ -42,10 +39,10 @@ const Project = ({project}) => {
                         })
                     }
                 </div>
-                <Link href={link} className="flex space-x-5 items-center">
+                <div  className="flex space-x-5 items-center">
                     <p className="text-sm">Live Link</p>
                     <Link2 className='text-lightblue' size={15}/>
-                </Link>
+                </div>
             </div>
 
         </div>

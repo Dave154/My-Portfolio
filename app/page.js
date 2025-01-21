@@ -3,6 +3,7 @@ import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 import Hero from "@/components/hero";
 import Projects from "@/components/projects";
+import Reviews from "@/components/reviews";
 import Skills from "@/components/skills";
 import Socials from "@/components/socials";
 import Image from "next/image";
@@ -16,6 +17,7 @@ export default function Home() {
          <Projects/>
          <Skills/>
          <Socials/>
+         <Reviews/>
          <Contact />
          <Footer />
        </main>

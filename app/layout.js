@@ -1,5 +1,6 @@
 import "./globals.css";
 import Header from "@/components/header";
+import { Toaster } from "@/components/ui/sonner";
 
 import { Montserrat, Roboto } from 'next/font/google';
 
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
       >
         <Header/>
         {children}
+        <Toaster />
       </body>
     </html>
   );

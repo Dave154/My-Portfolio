@@ -1,4 +1,5 @@
-import { BrainCircuit, Code2, Contact2Icon, Grid2X2, Home } from 'lucide-react'
+'use client';
+import { BrainCircuit, Code2, Contact2Icon, Grid2x2, Grid2X2, Home } from 'lucide-react'
 import Link from 'next/link'
 import {
     Tooltip,
@@ -6,18 +7,42 @@ import {
     TooltipProvider,
     TooltipTrigger,
   } from "@/components/ui/tooltip"
-  
+  import { useState, useEffect } from 'react';  
 
 const Header = () => {
-
-
+    const [isVisible, setIsVisible] = useState(true); 
+    const [lastScrollY, setLastScrollY] = useState(0); 
+    useEffect(() => {
+        const handleScroll = () => {
+          const currentScrollY = window.scrollY;
+    
+          if (currentScrollY > lastScrollY && currentScrollY > 150) {
+            setIsVisible(false);
+          } else {
+            setIsVisible(true);
+          }
+    
+          setLastScrollY(currentScrollY); 
+        };
+    
+        window.addEventListener('scroll', handleScroll); 
+    
+        return () => {
+          window.removeEventListener('scroll', handleScroll); 
+        };
+      }, [lastScrollY]); 
+    
     const nav = [
         {
             icon: <Home /> ,
-            text: 'about'
+            text: 'Home'
         },
         {
             icon: <Code2 /> ,
+            text: 'projects'
+        },
+        {
+            icon: <Grid2x2 /> ,
             text: 'projects'
         },
         {
@@ -36,12 +61,12 @@ const Header = () => {
             {'/>'}
         </Link>
 
-        <nav className="max-w-md relative rounded-full border border-gray-300/50 py-3 px-8 mx-auto mt-5 backdrop-blur-2xl bg-gray-800/40 flex justify-between items-center 
-        after:content-[''] after:absolute after:-bottom-[1px] after:left-6 after:border-gradient after:w-36 after:h-[1px]">
-            {
+        <nav className= {`${!isVisible ?'-translate-y-40':'translate-y-0'} transition-all duration-1000 max-w-md relative rounded-full border border-gray-300/50 py-3 px-8 mx-auto mt-5 backdrop-blur-2xl bg-gray-800/40 flex justify-between items-center 
+        after:content-[''] after:absolute after:-bottom-[1px] after:left-6 after:border-gradient after:w-36 after:h-[1px]`}>
+         {
                 nav.map((item,i)=>{
                    const {icon,text}=item
-                    return <Link key={text + i} href={'#'+text} className='text-white capitalize text-xs'>
+                    return <Link key={text + i} href={ text=== 'Home'? '/':'#'+text} className='text-white capitalize text-xs'>
                             <p className="hidden sm:inline ">{text}</p>
                             <TooltipProvider>
                                 <Tooltip>
