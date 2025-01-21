@@ -28,12 +28,17 @@ const Projects = () => {
         {
             image:'/navigo.png',
             title:'Navigo',
-            desc:'This is a test description for styling purposes, Remember to gget original text contents before finale deployment',
+            desc:'Landing Page for a Crypto Payment Solution designed to introduce and showcase a seamless crypto transaction platform.',
             link:'',
             tools:[
                 {
-                    name:'',
-                    image:'',
+                    name:'/',
+                    image:'/react.png',
+                },
+
+                {
+                    name:'/gsap.png',
+                    image:'/gsap.png',
                 },
             ]
 
@@ -54,7 +59,11 @@ const Projects = () => {
                 },
                 {
                     name:'Firebase',
-                    image:'/redux.png',
+                    image:'/firebase.svg',
+                },
+                {
+                    name:'Material',
+                    image:'/material.svg',
                 },
             ]
 
@@ -62,37 +71,42 @@ const Projects = () => {
         {
             image:'/walmart.png',
             title:'Walmart Clone',
-            desc:'',
+            desc:`Walmart 2.0 is a clone of Walmart's e-commerce platform, designed as a modern web application that leverages Oxylabs for data scraping. While it replicates key features for browsing and exploring products, payment functionality is not included.`,
             link:'',
             tools:[
                 {
                     name:'',
-                    image:'',
+                    image:'/next.jpg',
                 },
+                {
+                    name:'',
+                    image:'/tailwind.png',
+                },
+                {
+                    name:'',
+                    image:'/shadcn.png',
+                },
+            
             ]
 
         },
         {
-            image:'/bg1.jpg',
-            title:'This is a test Title',
-            desc:'This is a test description for styling purposes, Remember to gget original text contents before finale deployment',
+            image:'/claripdf.png',
+            title:'Claripdf',
+            desc:'Claripdf is a web-based application designed to convert image-based PDFs or images into editable and searchable documents. By leveraging Optical Character Recognition (OCR) and AI-powered text refinement, Claripdf provides users with a seamless workflow to upload, edit, and export their documents in multiple formats.',
             link:'',
             tools:[
                 {
                     name:'',
-                    image:'',
+                    image:'/react.png',
                 },
                 {
                     name:'',
-                    image:'',
+                    image:'/tailwind.png',
                 },
                 {
                     name:'',
-                    image:'',
-                },
-                {
-                    name:'',
-                    image:'',
+                    image:'/shadcn.png',
                 },
             ]
 

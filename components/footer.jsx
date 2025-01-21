@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Footer = () => {
@@ -8,15 +9,18 @@ const Footer = () => {
     const socials = [
        {
          src:'/whatsapp.png',
-         name:'Whatsapp'
+         name:'Whatsapp',
+         link:''
        },
        {
          src:'/x.png',
-         name:'X'
+         name:'X',
+         link:'https://x.com/dave_154______'
        },
        {
          src:'/github.png',
-         name:'Github'
+         name:'Github',
+         link:'https://github.com/Dave154/',
        },
     ]
 
@@ -27,15 +31,15 @@ const Footer = () => {
 
             <div className="flex gap-4">
                 {socials.map((item,index)=>{
-                    const {src,name }= item
-                    return <div key={src + index} className="border border-gray-400/40 h-10 w-10 rounded-xl grid place-content-center">
+                    const {src,name,link }= item
+                    return <Link href={link} key={src + index} className="border border-gray-400/40 h-10 w-10 rounded-xl grid place-content-center">
                         <Image
                             src={src}
                             alt={name}
                             width={30}
                             height={30}
                         />
-                    </div>
+                    </Link>
                 })}
             </div>
         </div>
