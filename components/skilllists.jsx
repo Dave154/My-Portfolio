@@ -120,7 +120,7 @@ useEffect(() => {
             sndc.map((skill,index)=>{
                 const {name,src}=skill
 
-                return <motion.div
+                return <motion.div key={index}
                     variants={boxVariants}
                 className="">
                     <Skill key={name+index} src={src} name={name} />

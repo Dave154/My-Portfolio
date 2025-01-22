@@ -72,7 +72,7 @@ const Projects = () => {
             image:'/walmart.png',
             title:'Walmart Clone',
             desc:`Walmart 2.0 is a clone of Walmart's e-commerce platform, designed as a modern web application that leverages Oxylabs for data scraping. While it replicates key features for browsing and exploring products, payment functionality is not included.`,
-            link:'',
+            link:'https://walmart-2-0-rosy.vercel.app',
             tools:[
                 {
                     name:'',
@@ -94,7 +94,7 @@ const Projects = () => {
             image:'/claripdf.png',
             title:'Claripdf',
             desc:'Claripdf is a web-based application designed to convert image-based PDFs or images into editable and searchable documents. By leveraging Optical Character Recognition (OCR) and AI-powered text refinement, Claripdf provides users with a seamless workflow to upload, edit, and export their documents in multiple formats.',
-            link:'',
+            link:'https://claripdf.vercel.app/',
             tools:[
                 {
                     name:'',
