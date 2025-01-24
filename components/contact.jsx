@@ -24,6 +24,7 @@ const Contact = () => {
                 <h2 className="text-4xl font-bold">Ready to take <span className="text-purple">your</span>  digital <br />  presence to the next level?</h2>
                 <p className=""> Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                 <GradientButton 
+                
                 text={`Let's get in touch`}
                 icon={<MessageSquareTextIcon />} 
                 link={`mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`} />
