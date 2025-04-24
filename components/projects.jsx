@@ -1,10 +1,11 @@
 'use client';
 import Project from './project'
 import GradientButton from './gradientbutton'
-import { ArrowDownCircleIcon } from 'lucide-react'
+import { ArrowDownCircleIcon, Link2 } from 'lucide-react'
 import { motion, useAnimation, useInView } from 'framer-motion';
-import { useEffect, useRef } from 'react';
-
+import { useEffect, useRef, useState } from 'react';
+import Modal from './modal';
+import Image from 'next/image';
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -29,7 +30,7 @@ const Projects = () => {
             image:'/navigo.png',
             title:'Navigo',
             desc:'Landing Page for a Crypto Payment Solution designed to introduce and showcase a seamless crypto transaction platform.',
-            link:'',
+            link:'https://navigo-eight.vercel.app/',
             tools:[
                 {
                     name:'/',
@@ -68,28 +69,7 @@ const Projects = () => {
             ]
 
         },
-        {
-            image:'/walmart.png',
-            title:'Walmart Clone',
-            desc:`Walmart 2.0 is a clone of Walmart's e-commerce platform, designed as a modern web application that leverages Oxylabs for data scraping. While it replicates key features for browsing and exploring products, payment functionality is not included.`,
-            link:'https://walmart-2-0-rosy.vercel.app',
-            tools:[
-                {
-                    name:'',
-                    image:'/next.jpg',
-                },
-                {
-                    name:'',
-                    image:'/tailwind.png',
-                },
-                {
-                    name:'',
-                    image:'/shadcn.png',
-                },
-            
-            ]
-
-        },
+       
         {
             image:'/claripdf.png',
             title:'Claripdf',
@@ -111,8 +91,29 @@ const Projects = () => {
             ]
 
         },
+        {
+            image:'/gamaliel.png',
+            title:'Gamaliel Consult',
+            desc:'Gamaliel Consult is a professional consulting platform built with Vue.js and Tailwind CSS, featuring both a public-facing landing page and a secure, role-based dashboard for internal operations. The landing page introduces the firm’s services with a clean, responsive design, while the dashboard allows staff and admins to manage clients, appointments, and analytics efficiently. The app combines sleek UI with seamless navigation, enhancing both user experience and operational workflow.',
+            link:'',
+            tools:[
+                {
+                    name:'',
+                    image:'/vue.png',
+                },
+                {
+                    name:'',
+                    image:'/tailwind.png',
+                },
+               
+            ]
+
+        }
     ]
 
+
+ 
+    const [allProjects,setAllProjects]= useState(false)
     const controls = useAnimation();
     const ref = useRef(null); 
     const isInView = useInView(ref, { once: true, margin: '0px 0px -100px 0px' }); 
@@ -133,12 +134,20 @@ const Projects = () => {
             animate={controls} 
             className="grid md:grid-cols-2 gap-5 w-full max-w-7xl" >
                 {
-                    projects.map((project,index)=>{
+                    projects.slice(0,2).map((project,index)=>{
                         return  <motion.div 
                         variants={boxVariants}
                         className=""  key={index}>
                             <Project project={project}/>
                         </motion.div> 
+                    })
+                }
+                {
+                    allProjects && projects.slice(2,projects.length).map((project,index)=>{
+                        return  <div 
+                        className=""  key={index}>
+                            <Project project={project}/>
+                        </div> 
                     })
                 }
                 
@@ -147,13 +156,16 @@ const Projects = () => {
             variants={boxVariants}
         >
 
-        <GradientButton 
-         text='View all'
-         link='/'
-         icon={<ArrowDownCircleIcon/>}
-         />
+            <div className="" onClick={()=>setAllProjects(!allProjects)}>
+                <GradientButton 
+                 text={allProjects ? 'View less' : 'View all'}
+                 icon={<ArrowDownCircleIcon/>}
+                 />
+            </div>
+       
          </motion.div>
         </div>
+      
     </section>
   )
 }

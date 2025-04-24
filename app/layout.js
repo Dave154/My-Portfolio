@@ -1,5 +1,6 @@
 import "./globals.css";
 import Header from "@/components/header";
+import Modal from "@/components/modal";
 import { Toaster } from "@/components/ui/sonner";
 
 import { Montserrat, Roboto } from 'next/font/google';

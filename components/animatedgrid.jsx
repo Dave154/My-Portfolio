@@ -59,7 +59,7 @@ useEffect(() => {
               
               <p className="md:text-right text-center md:max-w-72 f
               ">
-                Hi, I’m David Okpe, a passionate Full-Stack Developer from Nigeria. With a strong foundation in Next.js, Tailwind CSS, and React, I specialize in creating seamless, high-performance, and visually appealing web applications.</p>
+                Hi, I’m David Okpe, a passionate Full-Stack Developer from Nigeria. With a strong foundation in Next.js,Vue.js, Tailwind CSS, and React, I specialize in creating seamless, high-performance, and visually appealing web applications.</p>
             </motion.div>
             <motion.div
              variants={boxVariants}

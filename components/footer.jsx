@@ -10,7 +10,7 @@ const Footer = () => {
        {
          src:'/whatsapp.png',
          name:'Whatsapp',
-         link:''
+         link:'https://wa.link/sbt7wu'
        },
        {
          src:'/x.png',
@@ -22,6 +22,12 @@ const Footer = () => {
          name:'Github',
          link:'https://github.com/Dave154/',
        },
+       {
+        src: '/linkedin.png',
+        name:'Linkedin',
+        link:'https://www.linkedin.com/in/david-okpe-a3686b297/'
+
+    },
     ]
 
   return (

@@ -22,6 +22,10 @@ const Skilllists = () => {
             name:'Next.js'
         },
         {
+            src:'/vue.png',
+            name:'Vue'
+        },
+        {
             src:'/scss.svg',
             name:'Scss'
         },
@@ -119,11 +123,11 @@ useEffect(() => {
         {
             sndc.map((skill,index)=>{
                 const {name,src}=skill
-
-                return <motion.div key={index}
+                    console.log(skill)
+                return <motion.div key={name+index}
                     variants={boxVariants}
                 className="">
-                    <Skill key={name+index} src={src} name={name} />
+                    <Skill  src={src} name={name} />
                 </motion.div>
                
             })

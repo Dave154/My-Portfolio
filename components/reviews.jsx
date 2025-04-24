@@ -38,7 +38,7 @@ const Reviews = () => {
 
     if (!isClient) return null;
   return (
-    <section className='section min-h-96 pb-32'>  
+    <section className='section min-h-96 pb-32' id='reviews'>  
         <div className="w-full">
             <h2 className="font-bold text-4xl text-center p-5 mb-8">Testimonials from <br /> <span className="text-purple"> Happy Clients</span></h2>
             
