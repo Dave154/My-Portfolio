@@ -43,7 +43,7 @@ const Header = () => {
         },
         {
             icon: <Grid2x2 /> ,
-            text: 'projects'
+            text: 'reviews'
         },
         {
             icon: <BrainCircuit /> ,

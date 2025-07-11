@@ -26,7 +26,7 @@ const Socials = () => {
         {
             icon: '/whatsapp.png',
             name:'whatsapp',
-            link:''
+            link:'https://wa.link/sbt7wu'
 
         },
         {
