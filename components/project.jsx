@@ -11,15 +11,15 @@ const Project = ({project}) => {
         <div className="absolute opacity-0 z-10 transition-opacity duration-1000 group-hover:opacity-100 top-1 left-1/2 -translate-x-1/2 flex flex-col items-center ">
         <div className="rounded-full  shadow-sm shadow-gray-100/30  py-1 px-2 text-xs bg-lightblue text_up relative top-20 z-20">{link}</div> 
 </div>
-    <Link href={link} className=' backdrop-blur-2xl border  relative border-gray-600/80 rounded-xl p-5 grid gap-4 fallback cursor-pointer'>
+    <Link href={link} className='backdrop-blur-2xl border  relative border-gray-600/80 rounded-xl p-5 grid gap-4 fallback cursor-pointer'>
         <div className="bg-background relative rounded-xl border border-gray-800/90 overflow-hidden">
     
         <Image 
             src={image}
             alt={title}
-            width={150}
-            height={150}
-            className='w-full h-64'
+            width={1000}
+            height={1000}
+            className='w-full h-full'
         />
         </div>
         <div className="space-y-7">
@@ -48,6 +48,7 @@ const Project = ({project}) => {
         </div>
         
     </Link>
+    
     </article>
   )
 }

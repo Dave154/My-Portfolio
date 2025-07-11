@@ -26,6 +26,24 @@ const Projects = () => {
 
     const projects= [
         {
+            image:'/claycave.png',
+            title:'Claycave',
+            desc:'Fintech webapp and mobile app',
+            link:'',
+            tools:[
+                {
+                    name:'/',
+                    image:'/react.png',
+                },
+
+                {
+                    name:'/gsap.png',
+                    image:'/gsap.png',
+                },
+            ]
+
+        },
+        {
             image:'/navigo.png',
             title:'Navigo',
             desc:'Landing Page for a Crypto Payment Solution designed to introduce and showcase a seamless crypto transaction platform.',
@@ -43,6 +61,7 @@ const Projects = () => {
             ]
 
         },
+
         {
             image:'/trovemart.png',
             title:'Trovemart',
