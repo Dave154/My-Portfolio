@@ -62,6 +62,24 @@ const Projects = () => {
             ]
 
         },
+        {
+            image:'/darllix.png',
+            title:'Darllix',
+            desc:'An ecommerce platform that lets businesses easily launch and manage their own online stores.',
+            link:'https://darllix.shop',
+            tools:[
+                {
+                    name:'/',
+                    image:'/next.jpg',
+                },
+                 {
+                    name:'/',
+                    image:'/supa.jpg',
+                },
+
+            ]
+
+        },
 
         {
             image:'/trovemart.png',
@@ -114,7 +132,7 @@ const Projects = () => {
             image:'/gamaliel.png',
             title:'Gamaliel Consult',
             desc:'Gamaliel Consult is a professional consulting platform built with Vue.js and Tailwind CSS, featuring both a public-facing landing page and a secure, role-based dashboard for internal operations. The landing page introduces the firm’s services with a clean, responsive design, while the dashboard allows staff and admins to manage clients, appointments, and analytics efficiently. The app combines sleek UI with seamless navigation, enhancing both user experience and operational workflow.',
-            link:'',
+            link:'https://www.gamalielconsult.com/',
             tools:[
                 {
                     name:'',

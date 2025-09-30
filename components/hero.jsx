@@ -23,7 +23,7 @@ const Hero = () => {
                 <GradientButton 
                 text='Resume' 
                 icon={<LucideFileText />} 
-                link='https://drive.google.com/uc?export=download&id=1Rn3qemO5_hRk9IEOqHDZgH4RNbW3bZ5T' />
+                link='https://drive.google.com/uc?export=download&id=18JzJj2hbAEr3nJ6wYsOhDG8W9CCpLoiD' />
         </div>
         
     </section>

@@ -47,7 +47,7 @@ useEffect(() => {
             className="about_box flex flex-col md:flex-row justify-center gap-10 items-center col-span-6 row-span-6 relative">
               <div className="rounded-xl overflow-hidden w-1/2 h-64">
               <Image
-                src={'/me.jpg'}
+                src={'/me.png'}
                 alt='About me'
                 width={256}
                 height={256}
@@ -57,7 +57,7 @@ useEffect(() => {
               </div>
               
               
-              <p className="md:text-right text-center md:max-w-72 f
+              <p className="md:text-left text-center md:max-w-72 f
               ">
                 Hi, I’m David Okpe, a passionate Full-Stack Developer from Nigeria. With a strong foundation in Next.js,Vue.js, Tailwind CSS, and React, I specialize in creating seamless, high-performance, and visually appealing web applications.</p>
             </motion.div>

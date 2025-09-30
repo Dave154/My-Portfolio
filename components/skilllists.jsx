@@ -80,6 +80,10 @@ const Skilllists = () => {
             name:'Redux'
         },
         {
+           src:'/supa.jpg',
+           name:'Supabase'
+       },
+        {
             src:'/firebase.svg',
             name:'Firebase'
         },
@@ -123,7 +127,7 @@ useEffect(() => {
         {
             sndc.map((skill,index)=>{
                 const {name,src}=skill
-                    console.log(skill)
+                  
                 return <motion.div key={name+index}
                     variants={boxVariants}
                 className="">
