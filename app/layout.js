@@ -12,18 +12,17 @@ const spaceGrotesk = Space_Grotesk({
 const clashDisplay = localFont({
   src: "./fonts/ClashDisplay-Variable.woff2", // Make sure this matches your exact file name!
   variable: "--font-clash-display",
-  weight: "200 700", // Variable fonts support a range of weights
+  weight: "200 700", 
 });
 
 export const metadata = {
-  title: "Dave | Architecting Complex SaaS Ecosystems",
+  title: "Dave | Software Developer",
   description: "Specializing in multi-tenant SaaS, dynamic commerce, and intuitive design.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* 3. Inject the font variables into the body tag */}
       <body className={`${clashDisplay.variable} ${spaceGrotesk.variable} antialiased bg-[#0A0A0A] text-[#FAFAFA]`}>
         {children}
       </body>
