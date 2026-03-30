@@ -19,7 +19,6 @@ export default function ResponsiveHero() {
   
   const { scrollY } = useScroll();
   
-  // Rotates to vertical exactly as it leaves the header
   const rotation = useTransform(scrollY, [0, 100], [0, -90]);
   
   const stickyY = useTransform(scrollY, [0, 500], ["3px", "50%"]);
