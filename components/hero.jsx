@@ -22,7 +22,6 @@ export default function ResponsiveHero() {
   // Rotates to vertical exactly as it leaves the header
   const rotation = useTransform(scrollY, [0, 100], [0, -90]);
   
-  // Keeps it visible on the left side of the screen as you scroll
   const stickyY = useTransform(scrollY, [0, 500], ["3px", "50%"]);
   const stickyX = useTransform(scrollY, [0, 100], ["24px", "12px"]);
 
