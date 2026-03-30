@@ -1,37 +1,31 @@
+import { Space_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
-import Header from "@/components/header";
-import Modal from "@/components/modal";
-import { Toaster } from "@/components/ui/sonner";
 
-import { Montserrat, Roboto } from 'next/font/google';
-
-const montserrat = Montserrat({
-  weight: ['400', '500', '700'],
-  subsets: ['latin'],
-  variable: '--font-montserrat',
+// 1. Setup the Google Font for your body text
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
 });
 
-const roboto = Roboto({
-  weight: ['400', '500', '700'],
-  subsets: ['latin'],
-  variable: '--font-roboto',
+// 2. Setup the local Clash Display font for your massive headers
+const clashDisplay = localFont({
+  src: "./fonts/ClashDisplay-Variable.woff2", // Make sure this matches your exact file name!
+  variable: "--font-clash-display",
+  weight: "200 700", // Variable fonts support a range of weights
 });
 
 export const metadata = {
-  title: "David.O",
-  description: "Front-End Developer",
+  title: "Dave | Architecting Complex SaaS Ecosystems",
+  description: "Specializing in multi-tenant SaaS, dynamic commerce, and intuitive design.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${montserrat.variable} ${roboto.variable} font-montserrat
-        `}
-      >
-        <Header/>
+      {/* 3. Inject the font variables into the body tag */}
+      <body className={`${clashDisplay.variable} ${spaceGrotesk.variable} antialiased bg-[#0A0A0A] text-[#FAFAFA]`}>
         {children}
-        <Toaster />
       </body>
     </html>
   );
