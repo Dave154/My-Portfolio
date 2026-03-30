@@ -16,12 +16,10 @@ const kineticElements = [
 export default function ResponsiveHero() {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const containerRef = useRef(null);
-  
   const { scrollY } = useScroll();
-  
   const rotation = useTransform(scrollY, [0, 100], [0, -90]);
   
-  const stickyY = useTransform(scrollY, [0, 500], ["3px", "50%"]);
+  const stickyY = useTransform(scrollY, [0, 500], ["2.8px", "50%"]);
   const stickyX = useTransform(scrollY, [0, 100], ["24px", "12px"]);
 
   useEffect(() => {
@@ -53,7 +51,6 @@ export default function ResponsiveHero() {
 
   return (
     <>
-      {/* STICKY WATERMARK: Positioned outside the main section to avoid overflow clipping */}
       <motion.div
         style={{ 
           rotate: rotation,
@@ -182,7 +179,7 @@ export default function ResponsiveHero() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <span className="font-display uppercase text-2xl tracking-wide">
+            <span className="font-display uppercase text-xl tracking-wide">
               Available →
             </span>
           </motion.div>

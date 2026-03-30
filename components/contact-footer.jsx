@@ -32,7 +32,7 @@ export default function ContactFooter() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="font-display uppercase text-[9vw] md:text-[8vw] leading-[0.85] tracking-tighter"
+          className="font-display uppercase text-[9vw] md:text-[8vw] leading-[0.85] tracking-tighter p-8"
         >
           LET'S ENGINEER
           <br className="hidden md:block" />
@@ -41,7 +41,7 @@ export default function ContactFooter() {
       </div>
 
       {/* THE CONTACT STRIP */}
-      <div className="grid grid-cols-1 md:grid-cols-2 border-t border-b border-white/10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 border-t border-b border-white/10">
         
         {/* Click to Copy Email */}
         <div 
@@ -57,7 +57,7 @@ export default function ContactFooter() {
         </div>
 
         {/* Social Links */}
-        <div className="grid grid-cols-2 sm:grid-cols-5 w-full border-t sm:border-t-0 border-white/10">
+        <div className="grid grid-cols-2 md:grid-cols-4 w-full border-t md:border-t-0 border-white/10">
           {[
             { name: "GitHub", url: "https://github.com/Dave154" },
             { name: "LinkedIn", url: "https://www.linkedin.com/in/david-okpe-a3686b297" },
@@ -79,8 +79,6 @@ export default function ContactFooter() {
             </a>
           ))}
           
-        </div>
-      </div>
           <a 
             href="/David_Okpe_Software_Developer.pdf" 
             download 
@@ -90,6 +88,8 @@ export default function ContactFooter() {
               ↓ Get CV
             </span>
           </a>
+        </div>
+      </div>
 
       {/* THE COPYRIGHT / SIGNATURE */}
       <div className="p-6 flex flex-col md:flex-row items-center justify-between font-mono text-xs uppercase tracking-widest text-white/30">

@@ -100,6 +100,25 @@ export default function ProjectDarllix() {
         <p className="font-sans text-xl text-white/50 max-w-2xl mt-6">
           A multi-tenant e-commerce ecosystem blending standalone storefronts with an algorithmic discovery marketplace.
         </p>
+
+        <div className="md:col-span-2 mt-8">
+                          <a 
+                            href={"https://darllix.shop"} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-3 group/link"
+                          >
+                            <div className="flex items-center gap-2 px-3 py-1 border border-white/20 rounded-full group-hover/link:border-white transition-colors">
+                              <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                              <span className="font-mono text-[10px] uppercase tracking-widest text-white/50 group-hover/link:text-white">
+                                Live System
+                              </span>
+                            </div>
+                            <span className="font-mono text-xs uppercase tracking-widest underline underline-offset-4 decoration-white/20 group-hover/link:decoration-white transition-all">
+                              Visit Platform ↗
+                            </span>
+                          </a>
+                        </div>
       </div>
 
       {/* The Sticky Scroll Container */}
