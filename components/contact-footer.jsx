@@ -57,7 +57,7 @@ export default function ContactFooter() {
         </div>
 
         {/* Social Links */}
-        <div className="grid grid-cols-2 md:grid-cols-4 w-full border-t md:border-t-0 border-white/10">
+        <div className="grid grid-cols-2 md:grid-cols-3 w-full border-t md:border-t-0 border-white/10">
           {[
             { name: "GitHub", url: "https://github.com/Dave154" },
             { name: "LinkedIn", url: "https://www.linkedin.com/in/david-okpe-a3686b297" },
@@ -82,10 +82,11 @@ export default function ContactFooter() {
           <a 
             href="/David_Okpe_Software_Developer.pdf" 
             download 
-            className="col-span-2 sm:col-span-1 p-6 flex items-center justify-center bg-white text-black hover:bg-white/80 transition-colors duration-300 group"
+            className="col-span-2 sm:col-span-1 p-6 flex items-center justify-center bg-white text-black hover:bg-white/80 transition-colors duration-300 group md:hidden"
           >
-            <span className="font-mono text-xs md:text-sm uppercase tracking-widest font-bold flex items-center gap-2">
-              ↓ Get CV
+            <span className="font-mono text-xs md:text-sm  uppercase tracking-widest font-bold flex items-center gap-2">
+                            ↓ DOWNLOAD RÉSUMÉ
+
             </span>
           </a>
         </div>
