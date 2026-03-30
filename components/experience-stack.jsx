@@ -199,7 +199,7 @@ const experienceData = [
     stack: [
       { name: "React", src: "/react.png" },
       { name: "Tailwind", src: "/tailwind.png" },
-      { name: "Design", src: "/react.png" } 
+      { name: "Design", src: "/figma.svg" } 
     ]
   }
 ];
