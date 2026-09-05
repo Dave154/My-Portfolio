@@ -40,7 +40,7 @@ const Project = ({project}) => {
                         tools?.map((item,index)=>{
                             const {image,name} = item
                             return <Avatar key={index} className="h-10 w-10 p-2 bg-background overflow-hidden">
-                            <AvatarImage src={image} className='object-contain' />
+                            <AvatarImage src={image} alt={`${name || title} technology logo`} className='object-contain' />
                           </Avatar>
                           
                         })
@@ -69,7 +69,7 @@ const Project = ({project}) => {
                         tools?.map((item,index)=>{
                             const {image,name} = item
                             return <Avatar key={index} className="h-10 w-10 p-2 bg-background overflow-hidden">
-                            <AvatarImage src={image} className='object-contain' />
+                            <AvatarImage src={image} alt={`${name || project.title} technology logo`} className='object-contain' />
                           </Avatar>
                           
                         })

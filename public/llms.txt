@@ -1,0 +1,18 @@
+# Dave Okpe
+
+> Dave Okpe is a software developer building scalable commerce platforms, multi-tenant SaaS products, and intuitive digital experiences.
+
+## Site
+
+- Homepage: https://davidokpedev.vercel.app/
+- Contact: mailto:okpedavid0@gmail.com
+- GitHub: https://github.com/Dave154
+- LinkedIn: https://www.linkedin.com/in/david-okpe-a3686b297
+- X: https://x.com/dave_154______
+
+## Focus
+
+- Full-stack web development
+- Multi-tenant architecture
+- E-commerce platforms
+- Product design and frontend engineering
