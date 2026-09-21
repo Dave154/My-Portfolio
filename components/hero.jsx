@@ -60,7 +60,7 @@ export default function ResponsiveHero() {
         }}
         className="fixed z-[100] pointer-events-none mix-blend-difference font-sans uppercase text-xs md:text-sm tracking-widest text-white/80"
       >
-        Dave — 2026
+        David Okpe — 2026
       </motion.div>
 
       <section
@@ -130,7 +130,7 @@ export default function ResponsiveHero() {
           <div className="relative w-full h-full rounded-full border border-white/20 overflow-hidden group bg-[#050505]">
             <Image
               src="/dave-portrait.png" 
-              alt="Dave Portrait"
+              alt="David Okpe portrait"
               fill
               unoptimized
               priority
@@ -149,7 +149,7 @@ export default function ResponsiveHero() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="font-display uppercase text-[15vw] leading-[0.8] tracking-tighter mix-blend-difference"
             >
-              NOT JUST
+              BUILT AROUND
             </motion.h1>
           </div>
 
@@ -160,7 +160,7 @@ export default function ResponsiveHero() {
               transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="font-display uppercase text-[15vw] leading-[0.8] tracking-tighter text-white/40 mix-blend-difference"
             >
-              SIDE PROJECTS.
+              REAL PROBLEMS.
             </motion.h1>
           </div>
         </div>
@@ -169,8 +169,9 @@ export default function ResponsiveHero() {
         <div className="grid grid-cols-1 md:grid-cols-4 min-h-[20vh] border-t border-white/10 z-30 pointer-events-auto bg-[#050505]">
           <div className="p-6 md:col-span-3 border-b md:border-b-0 md:border-r border-white/10 flex items-center">
             <p className="font-sans text-lg md:text-xl leading-relaxed max-w-2xl text-white/70">
-              Building software that actually scales. Specializing in complex commerce, 
-              multi-tenant architecture, and intuitive design. Currently battle-tested at JelloSite.
+              <strong className="block text-white mb-2">David Okpe — Full-Stack Developer</strong>
+              I turn business problems into working software, building web applications, business systems,
+              e-commerce platforms, and MVPs. Currently building production software at JelloSite.
             </p>
           </div>
 

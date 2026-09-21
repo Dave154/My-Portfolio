@@ -5,40 +5,48 @@ import { motion } from "framer-motion";
 const archiveProjects = [
   {
     id: "01",
+    title: "QAFFY",
+    description: "Laundry operations platform connecting customers, logistics, vendors, and administration.",
+    stack: "Next.js ✦ Supabase ✦ PWA",
+    link: "/work/qaffy",
+    status: "Case study"
+  },
+  {
+    id: "02",
     title: "LEARNPOOL",
-    description: "Web3 knowledge protocol for verified daily facts and on-chain rewards",
+    description: "A knowledge platform built around verified daily facts and on-chain rewards.",
     stack: "Next.js ✦ Tailwind",
     link: "https://pk.learnpool.fun/",
     status: "Live"
   },
   {
-    id: "02",
+    id: "03",
     title: "CLARIPDF",
-    description: "AI-powered OCR web app for editing image-based PDFs",
+    description: "An OCR-powered document tool for editing and working with image-based PDFs.",
     stack: "React ✦ Tailwind ✦ Shadcn",
     link: "https://claripdf.vercel.app/",
     status: "Live"
   },
   {
-    id: "03",
+    id: "04",
     title: "CLAYCAVE",
-    description: "All-in-One Subscription Manager & Virtual Cards",
+    description: "A subscription management product combining recurring services and virtual cards.",
     stack: "Next.js ✦ Tailwind",
     link: "https://claycave.vercel.app",
     status: "Live"
   },
   {
-    id: "04",
+    id: "05",
     title: "TROVEMART",
-    description: "Customer self-service shopping app with QR order verification",
+    description: "A self-service shopping experience with QR-based order verification.",
     stack: "React ✦ Redux ✦ Firebase",
     link: "https://trovemart.vercel.app",
     status: "Live"
   },
   {
-    id: "05",
+    id: "06",
     title: "GAMALIEL CONSULT",
-    description: "Consulting platform with secure, role-based internal dashboard",
+    description: "A consulting platform with a secure dashboard for role-specific internal work.",
     stack: "Vue ✦ Tailwind",
     link: "https://www.gamalielconsult.com/",
     status: "Live"

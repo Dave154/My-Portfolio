@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { siteConfig } from "@/lib/site";
 
-export const alt = "Dave Okpe, software developer";
+export const alt = "David Okpe, full-stack developer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -21,12 +21,12 @@ export default function OpenGraphImage() {
         }}
       >
         <div style={{ color: "#999", display: "flex", fontSize: 28, letterSpacing: 4 }}>
-          DAVE OKPE / SOFTWARE DEVELOPER
+          DAVID OKPE / FULL-STACK DEVELOPER
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-          <div style={{ fontSize: 88, fontWeight: 700, letterSpacing: -4 }}>NOT JUST</div>
+          <div style={{ fontSize: 88, fontWeight: 700, letterSpacing: -4 }}>BUILT AROUND</div>
           <div style={{ color: "#888", fontSize: 88, fontWeight: 700, letterSpacing: -4 }}>
-            SIDE PROJECTS.
+            REAL PROBLEMS.
           </div>
           <div style={{ color: "#aaa", fontSize: 26 }}>{siteConfig.description}</div>
         </div>

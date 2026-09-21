@@ -158,7 +158,7 @@ const experienceData = [
     role: "Software Developer",
     timeline: "2025 — Present",
     link: "https://jellosite.com",
-    details: "Shipping production-level features and optimizing complex architecture for the core platform. Working directly with leadership to execute high-impact technical solutions.",
+    details: "Worked as part of the core development team building and improving Jellosite's e-commerce platform, helping businesses create and manage their online stores. Contributed to product variants and options, product management and bulk uploads, checkout and payment integrations, admin tools, and analytics features. Collaborated with other developers on production features, code reviews, and structured development practices.",
     stack: [
       { name: "React", src: "/react.png" },
       { name: "Supabase", src: "/supabase.png" },
@@ -171,7 +171,7 @@ const experienceData = [
     role: "Full-Stack Developer",
     timeline: "2025 — Present",
     link: "https://ruumies.com",
-    details: "Driving front-end and back-end integration. Architecting scalable user flows and maintaining robust database structures to support active user bases.",
+    details: "Joined the development team midway through Ruumies, a platform connecting people looking for shared apartments and roommates. Worked across the existing system to bring the product through the remaining stages of development, including payment integration, booking flows, and the admin dashboard. Fixed inconsistencies and connected customer-facing and administrative workflows into a more complete product.",
     stack: [
       { name: "React", src: "/react.png" },
       { name: "Firebase", src: "/firebase.svg" },
@@ -208,7 +208,7 @@ export default function ExperienceStack() {
   const [openId, setOpenId] = useState("01"); 
 
   return (
-    <section className="w-full bg-[#050505] text-[#FAFAFA] border-t border-white/10 flex flex-col overflow-hidden">
+    <section id="experience" className="w-full bg-[#050505] text-[#FAFAFA] border-t border-white/10 flex flex-col overflow-hidden">
       
       <SkillGrid />
 
@@ -221,10 +221,10 @@ export default function ExperienceStack() {
 
            <div className="font-sans text-white/70 text-base lg:text-lg leading-relaxed max-w-sm">
              <p className="mb-4">
-               My foundation is in <strong className="text-white">Mechanical Engineering</strong>. I am trained to design complex systems where every moving part must execute with absolute precision.
+               My background is in <strong className="text-white">Mechanical Engineering</strong>, which shaped how I approach systems and problem solving.
              </p>
              <p>
-               I bring that exact same rigorous methodology to software—architecting scalable serverless backends, robust database structures, and high-performance interfaces.
+               Today, I apply that way of thinking to software, working across application architecture, databases, APIs, and interfaces to build systems that solve real problems.
              </p>
            </div>
         </div>
@@ -233,10 +233,15 @@ export default function ExperienceStack() {
           {experienceData.map((job) => (
             <div 
               key={job.id} 
-              className="border-b border-white/10 last:border-b-0 cursor-pointer group"
-              onClick={() => setOpenId(openId === job.id ? null : job.id)}
+              className="border-b border-white/10 last:border-b-0 group"
             >
-              <div className="p-6 lg:p-10 flex items-center justify-between transition-colors duration-300 hover:bg-white/5">
+              <button
+                type="button"
+                aria-expanded={openId === job.id}
+                aria-controls={`experience-${job.id}`}
+                onClick={() => setOpenId(openId === job.id ? null : job.id)}
+                className="w-full p-6 lg:p-10 flex items-center justify-between text-left transition-colors duration-300 hover:bg-white/5"
+              >
                 <div className="flex items-baseline gap-4 lg:gap-6">
                   <span className="font-mono text-xs lg:text-sm text-white/40">{job.id}</span>
                   <h3 className="font-display text-3xl lg:text-5xl uppercase tracking-tighter">
@@ -246,7 +251,7 @@ export default function ExperienceStack() {
                 <div className="font-mono text-xl text-white/50 group-hover:text-white transition-colors duration-300">
                   {openId === job.id ? "—" : "+"}
                 </div>
-              </div>
+              </button>
 
               <AnimatePresence>
                 {openId === job.id && (
@@ -255,6 +260,7 @@ export default function ExperienceStack() {
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    id={`experience-${job.id}`}
                     className="overflow-hidden"
                   >
                     <div className="p-6 lg:p-10 pt-0 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 font-sans">

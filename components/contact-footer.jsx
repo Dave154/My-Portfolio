@@ -14,7 +14,7 @@ export default function ContactFooter() {
   };
 
   return (
-    <footer className="w-full bg-[#050505] text-[#FAFAFA] border-t border-white/10 flex flex-col overflow-hidden pt-12 md:pt-24">
+    <footer id="contact" className="w-full bg-[#050505] text-[#FAFAFA] border-t border-white/10 flex flex-col overflow-hidden pt-12 md:pt-24">
       
       {/* THE HOOK */}
       <div className="px-6 md:px-12 flex flex-col items-center justify-center text-center mb-16 md:mb-24 space-y-8">
@@ -34,7 +34,7 @@ export default function ContactFooter() {
           transition={{ delay: 0.1 }}
           className="font-display uppercase text-[9vw] md:text-[8vw] leading-[0.85] tracking-tighter p-8"
         >
-          LET'S ENGINEER
+          LET&apos;S BUILD
           <br className="hidden md:block" />
           <span className="text-white/30 italic pr-4">SOMETHING</span> REAL.
         </motion.h2>
@@ -44,16 +44,16 @@ export default function ContactFooter() {
       <div className="grid grid-cols-1 lg:grid-cols-2 border-t border-b border-white/10">
         
         {/* Click to Copy Email */}
-        <div 
-          onClick={handleCopy}
-          className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-white/10 flex flex-col items-center justify-center cursor-pointer group hover:bg-white transition-colors duration-300"
-        >
+        <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-white/10 flex flex-col items-center justify-center group hover:bg-white transition-colors duration-300">
           <span className="font-mono text-xs uppercase tracking-widest text-white/40 group-hover:text-black/40 mb-4 transition-colors">
-            {copied ? "Copied to clipboard!" : "Click to copy email"}
+            Let&apos;s talk about what you&apos;re building.
           </span>
-          <span className="font-display text-3xl md:text-5xl tracking-tighter group-hover:text-black transition-colors">
+          <a href={`mailto:${email}`} className="font-display text-3xl md:text-5xl tracking-tighter group-hover:text-black transition-colors">
             {email}
-          </span>
+          </a>
+          <button type="button" onClick={handleCopy} className="mt-5 font-mono text-xs uppercase tracking-widest underline underline-offset-4 text-white/50 group-hover:text-black/60 transition-colors">
+            {copied ? "Copied to clipboard!" : "Copy email"}
+          </button>
         </div>
 
         {/* Social Links */}
@@ -95,10 +95,10 @@ export default function ContactFooter() {
       {/* THE COPYRIGHT / SIGNATURE */}
       <div className="p-6 flex flex-col md:flex-row items-center justify-between font-mono text-xs uppercase tracking-widest text-white/30">
         <div>
-          © {new Date().getFullYear()} DAVE. ALL RIGHTS RESERVED.
+          © {new Date().getFullYear()} DAVID OKPE. ALL RIGHTS RESERVED.
         </div>
         <div className="mt-4 md:mt-0">
-          BUILT WITH NEXT.JS & MECHANICAL PRECISION.
+          BUILT BY DAVID OKPE.
         </div>
       </div>
 

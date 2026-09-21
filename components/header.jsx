@@ -1,5 +1,5 @@
 'use client';
-import { BrainCircuit, Code2, Contact2Icon, Grid2x2, Grid2X2, Home } from 'lucide-react'
+import { BrainCircuit, Code2, Contact2Icon, Grid2x2, Home } from 'lucide-react'
 import Link from 'next/link'
 import {
     Tooltip,
@@ -39,19 +39,23 @@ const Header = () => {
         },
         {
             icon: <Code2 /> ,
-            text: 'projects'
+          text: 'Work',
+          href: '#projects'
         },
         {
             icon: <Grid2x2 /> ,
-            text: 'reviews'
+          text: 'Capabilities',
+          href: '#capabilities'
         },
         {
             icon: <BrainCircuit /> ,
-            text: 'My skills'
+          text: 'Experience',
+          href: '#experience'
         },
         {
             icon: <Contact2Icon />,
-            text: 'Contact'
+          text: 'Contact',
+          href: '#contact'
         }
     ]
 
@@ -66,7 +70,7 @@ const Header = () => {
          {
                 nav.map((item,i)=>{
                    const {icon,text}=item
-                    return <Link key={text + i} href={ text=== 'Home'? '/':'#'+text} className='text-white capitalize text-xs'>
+                    return <Link key={text + i} href={ item.href || '/'} className='text-white capitalize text-xs'>
                             <p className="hidden sm:inline ">{text}</p>
                             <TooltipProvider>
                                 <Tooltip>

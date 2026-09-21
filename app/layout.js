@@ -31,11 +31,13 @@ export const metadata = {
     canonical: "/",
   },
   keywords: [
-    "Dave Okpe",
-    "software developer",
+    "David Okpe",
     "full-stack developer",
-    "SaaS developer",
+    "software developer",
+    "business systems developer",
     "e-commerce developer",
+    "MVP developer",
+    "SaaS developer",
   ],
   openGraph: {
     type: "website",
@@ -44,7 +46,7 @@ export const metadata = {
     siteName: siteConfig.name,
     title: siteConfig.title,
     description: siteConfig.description,
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Dave Okpe, software developer" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "David Okpe, full-stack developer" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -71,21 +73,34 @@ export const metadata = {
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: siteConfig.name,
-  url: siteUrl,
-  image: `${siteUrl}/dave-portrait.png`,
-  description: siteConfig.description,
-  email: siteConfig.email,
-  priceRange: "$$",
-  areaServed: "Worldwide",
-  sameAs: siteConfig.sameAs,
-  founder: {
-    "@type": "Person",
-    name: siteConfig.name,
-    jobTitle: "Software Developer",
-    url: siteUrl,
-  },
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": `${siteUrl}/#profile`,
+      url: siteUrl,
+      name: siteConfig.title,
+      mainEntity: { "@id": `${siteUrl}/#david-okpe` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#david-okpe`,
+      name: siteConfig.name,
+      jobTitle: "Full-Stack Developer",
+      url: siteUrl,
+      image: `${siteUrl}/dave-portrait.png`,
+      description: siteConfig.description,
+      email: siteConfig.email,
+      sameAs: siteConfig.sameAs,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      name: siteConfig.name,
+      url: siteUrl,
+      description: siteConfig.description,
+      publisher: { "@id": `${siteUrl}/#david-okpe` },
+    },
+  ],
 };
 
 export default function RootLayout({ children }) {

@@ -3,30 +3,31 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const darllixFeatures = [
   {
     id: 1,
-    title: "THE VENDOR DASHBOARD",
-    description: "Centralized command center. Seamlessly manage inventory, track buyer details, and transition order states in real-time.",
+    title: "VENDOR MANAGEMENT",
+    description: "A centralized workspace for managing products, orders, customers, and the day-to-day work of running an online store.",
     image: "/darllixdashboard.png",
   },
   {
     id: 2,
-    title: "ALGORITHMIC DISCOVERY",
-    description: "An opt-in, TikTok-style vertical video feed driving organic cross-pollination and vendor discovery across the platform.",
+    title: "PRODUCT DISCOVERY",
+    description: "A discovery experience that helps customers find products and vendors beyond the stores they already know.",
     image: "/iPhone-13-PRO-localhost.png",
   },
   {
     id: 3,
-    title: "MULTI-TENANT STOREFRONTS",
-    description: "Frictionless onboarding with dynamic routing. Vendors instantly provision secure, standalone storefront URLs.",
+    title: "INDEPENDENT STOREFRONTS",
+    description: "Each vendor gets their own storefront while the platform handles the underlying system and infrastructure.",
     image: "/iPhone-13-PRO-kovan.darllix.shop.png",
   },
   {
     id: 4,
-    title: "SEAMLESS CHECKOUT",
-    description: "A frictionless, multi-step payment pipeline with secure integration. Buyers can browse, add to cart, and process transactions without ever being forced to create an account.",
+    title: "SIMPLE CHECKOUT",
+    description: "A simple checkout flow that lets customers browse, add products, and complete their purchase without unnecessary steps.",
     image: "/iPhone-13-PRO-kovan.darllix.shop (2).png", 
   }
 ];
@@ -68,7 +69,7 @@ const StackCard = ({ feature, index, totalCards, progress }) => {
           <div className="relative w-[90%] md:w-[90%] aspect-[1/2] rotate-[-2deg] hover:rotate-0 transition-transform duration-700">
             <Image
               src={feature.image}
-              alt={feature.title}
+              alt={`${feature.title.toLowerCase()} interface for the Darllix e-commerce platform`}
               fill
               unoptimized
               className="object-contain drop-shadow-2xl"
@@ -98,10 +99,16 @@ export default function ProjectDarllix() {
           DARLLIX.
         </h2>
         <p className="font-sans text-xl text-white/50 max-w-2xl mt-6">
-          A multi-tenant e-commerce ecosystem blending standalone storefronts with an algorithmic discovery marketplace.
+          Darllix is a multi-tenant e-commerce platform built for independent vendors to manage and grow their online businesses.
         </p>
 
-        <div className="md:col-span-2 mt-8">
+        <div className="md:col-span-2 mt-8 flex flex-wrap items-center justify-center gap-6">
+                          <Link
+                            href="/work/darllix"
+                            className="font-mono text-xs uppercase tracking-widest underline underline-offset-4 decoration-white/20 hover:decoration-white"
+                          >
+                            View case study ↗
+                          </Link>
                           <a 
                             href={"https://darllix.shop"} 
                             target="_blank" 
