@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { siteUrl } from "@/lib/site";
+import AutoplayVideo from "@/components/autoplay-video";
 
 const assetPath = "/qaffyassets";
 
@@ -97,21 +98,11 @@ export default function QaffyPage() {
           <span className="font-mono text-xs uppercase tracking-widest text-white/40">Qaffy product walkthrough</span>
         </div>
         <figure className="overflow-hidden border border-white/10 bg-black/40">
-          <video
-            className="aspect-video w-full object-contain"
-            controls
-            muted
-            playsInline
-            preload="metadata"
+          <AutoplayVideo
+            src={`${assetPath}/Grey Bold Collage Business Insights LinkedIn Post.mp4`}
             poster={`${assetPath}/Grey Bold Collage Business Insights LinkedIn Post.png`}
-            aria-label="Qaffy laundry operations platform product walkthrough"
-          >
-            <source
-              src={`${assetPath}/Grey Bold Collage Business Insights LinkedIn Post.mp4`}
-              type="video/mp4"
-            />
-            Your browser does not support the Qaffy product walkthrough video.
-          </video>
+            label="Qaffy laundry operations platform product walkthrough"
+          />
           <figcaption className="border-t border-white/10 px-5 py-4 font-mono text-xs uppercase tracking-widest text-white/40">
             A product walkthrough of the Qaffy laundry operations platform.
           </figcaption>
