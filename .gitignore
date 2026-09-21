@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local portfolio audit notes
+davidokpe-portfolio-audit*.md
+portfolio-improvement-progress.md

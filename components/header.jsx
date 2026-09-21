@@ -1,95 +1,34 @@
-'use client';
-import { BrainCircuit, Code2, Contact2Icon, Grid2x2, Home } from 'lucide-react'
-import Link from 'next/link'
-import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
-  } from "@/components/ui/tooltip"
-  import { useState, useEffect } from 'react';  
+import Link from "next/link";
 
-const Header = () => {
-    const [isVisible, setIsVisible] = useState(true); 
-    const [lastScrollY, setLastScrollY] = useState(0); 
-    useEffect(() => {
-        const handleScroll = () => {
-          const currentScrollY = window.scrollY;
-    
-          if (currentScrollY > lastScrollY && currentScrollY > 150) {
-            setIsVisible(false);
-          } else {
-            setIsVisible(true);
-          }
-    
-          setLastScrollY(currentScrollY); 
-        };
-    
-        window.addEventListener('scroll', handleScroll); 
-    
-        return () => {
-          window.removeEventListener('scroll', handleScroll); 
-        };
-      }, [lastScrollY]); 
-    
-    const nav = [
-        {
-            icon: <Home /> ,
-            text: 'Home'
-        },
-        {
-            icon: <Code2 /> ,
-          text: 'Work',
-          href: '#projects'
-        },
-        {
-            icon: <Grid2x2 /> ,
-          text: 'Capabilities',
-          href: '#capabilities'
-        },
-        {
-            icon: <BrainCircuit /> ,
-          text: 'Experience',
-          href: '#experience'
-        },
-        {
-            icon: <Contact2Icon />,
-          text: 'Contact',
-          href: '#contact'
-        }
-    ]
+const navigation = [
+  { label: "Work", href: "#projects" },
+  { label: "Capabilities", href: "#capabilities" },
+  { label: "Experience", href: "#experience" },
+  { label: "Contact", href: "#contact" },
+];
 
+export default function Header() {
   return (
-    <header className='fixed w-full  p-2 top-0 z-50'>
-        <Link href='/' className="absolute hidden md:block font-extrabold text-3xl bottom-1  text-transparent border-gradient bg-clip-text ">
-            {'/>'}
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#050505]/90 text-[#FAFAFA] backdrop-blur-md">
+      <nav aria-label="Primary navigation" className="grid grid-cols-4 md:grid-cols-6">
+        <Link
+          href="/"
+          className="col-span-4 flex min-h-[52px] flex-col justify-center border-r border-white/10 px-5 py-2 md:col-span-2 md:min-h-[64px] md:px-8 md:py-3"
+        >
+          <span className="font-display text-lg uppercase leading-none tracking-tight md:text-xl">David Okpe</span>
+          <span className="mt-1 font-mono text-[9px] uppercase tracking-[0.2em] text-white/40">Full-Stack Developer</span>
         </Link>
 
-        <nav className= {`${!isVisible ?'-translate-y-40':'translate-y-0'} transition-all duration-1000 max-w-md relative rounded-full border border-gray-300/50 py-3 px-8 mx-auto mt-5 backdrop-blur-2xl bg-gray-800/40 flex justify-between items-center 
-        after:content-[''] after:absolute after:-bottom-[1px] after:left-6 after:border-gradient after:w-36 after:h-[1px]`}>
-         {
-                nav.map((item,i)=>{
-                   const {icon,text}=item
-                    return <Link key={text + i} href={ item.href || '/'} className='text-white capitalize text-xs'>
-                            <p className="hidden sm:inline ">{text}</p>
-                            <TooltipProvider>
-                                <Tooltip>
-                                    <TooltipTrigger> <i className="sm:hidden inline">{icon}</i></TooltipTrigger>
-                                    <TooltipContent className="rounded-full shadow-md" sideOffset={5}>
-                                   <p className="capitalize">{text}</p> 
-                                    </TooltipContent>
-                                </Tooltip>
-                                </TooltipProvider>
-
-
-
-                           
-                    </Link>
-                })
-            }
-        </nav>
+        {navigation.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="flex min-h-[44px] items-center justify-center border-r border-white/10 px-1 font-mono text-[9px] uppercase tracking-[0.12em] text-white/60 transition-colors hover:bg-white hover:text-black sm:px-2 sm:text-[10px] sm:tracking-widest md:min-h-[64px] md:px-3 md:text-xs"
+          >
+            {item.label}
+          </Link>
+        ))}
+      </nav>
     </header>
-  )
+  );
 }
-
-export default Header

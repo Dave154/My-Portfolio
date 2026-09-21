@@ -24,7 +24,7 @@ export default function ContactFooter() {
           viewport={{ once: true }}
           className="font-mono text-sm md:text-base uppercase tracking-widest text-white/50 mb-6"
         >
-          System Capacity: <span className="text-white/70 underline underline-offset-8">Available for new builds</span>
+          System Capacity: <span className="text-white/70 underline underline-offset-8">Open to new projects</span>
         </motion.p>
         
         <motion.h2 
@@ -36,7 +36,7 @@ export default function ContactFooter() {
         >
           LET&apos;S BUILD
           <br className="hidden md:block" />
-          <span className="text-white/30 italic pr-4">SOMETHING</span> REAL.
+          <span className="text-white/30 italic pr-4">{" "}SOMETHING</span> REAL.
         </motion.h2>
       </div>
 

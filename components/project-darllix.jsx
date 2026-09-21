@@ -26,7 +26,7 @@ const darllixFeatures = [
   },
   {
     id: 4,
-    title: "SIMPLE CHECKOUT",
+    title: "CHECKOUT",
     description: "A simple checkout flow that lets customers browse, add products, and complete their purchase without unnecessary steps.",
     image: "/iPhone-13-PRO-kovan.darllix.shop (2).png", 
   }
@@ -118,11 +118,11 @@ export default function ProjectDarllix() {
                             <div className="flex items-center gap-2 px-3 py-1 border border-white/20 rounded-full group-hover/link:border-white transition-colors">
                               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
                               <span className="font-mono text-[10px] uppercase tracking-widest text-white/50 group-hover/link:text-white">
-                                Live System
+                                Live system
                               </span>
                             </div>
                             <span className="font-mono text-xs uppercase tracking-widest underline underline-offset-4 decoration-white/20 group-hover/link:decoration-white transition-all">
-                              Visit Platform ↗
+                              Visit live system ↗
                             </span>
                           </a>
                         </div>

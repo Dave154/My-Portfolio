@@ -1,18 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const archiveProjects = [
   {
     id: "01",
-    title: "QAFFY",
-    description: "Laundry operations platform connecting customers, logistics, vendors, and administration.",
-    stack: "Next.js ✦ Supabase ✦ PWA",
-    link: "/work/qaffy",
-    status: "Case study"
-  },
-  {
-    id: "02",
     title: "LEARNPOOL",
     description: "A knowledge platform built around verified daily facts and on-chain rewards.",
     stack: "Next.js ✦ Tailwind",
@@ -20,7 +13,7 @@ const archiveProjects = [
     status: "Live"
   },
   {
-    id: "03",
+    id: "02",
     title: "CLARIPDF",
     description: "An OCR-powered document tool for editing and working with image-based PDFs.",
     stack: "React ✦ Tailwind ✦ Shadcn",
@@ -28,7 +21,7 @@ const archiveProjects = [
     status: "Live"
   },
   {
-    id: "04",
+    id: "03",
     title: "CLAYCAVE",
     description: "A subscription management product combining recurring services and virtual cards.",
     stack: "Next.js ✦ Tailwind",
@@ -36,7 +29,7 @@ const archiveProjects = [
     status: "Live"
   },
   {
-    id: "05",
+    id: "04",
     title: "TROVEMART",
     description: "A self-service shopping experience with QR-based order verification.",
     stack: "React ✦ Redux ✦ Firebase",
@@ -44,7 +37,7 @@ const archiveProjects = [
     status: "Live"
   },
   {
-    id: "06",
+    id: "05",
     title: "GAMALIEL CONSULT",
     description: "A consulting platform with a secure dashboard for role-specific internal work.",
     stack: "Vue ✦ Tailwind",
@@ -56,6 +49,39 @@ const archiveProjects = [
 export default function ProjectIndex() {
   return (
     <section className="w-full bg-[#050505] text-[#FAFAFA] border-t border-white/10 pb-24">
+      <div className="border-b border-white/10 px-6 py-16 md:px-12 md:py-24">
+        <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <h2 className="font-display uppercase text-5xl tracking-tighter md:text-7xl">SELECTED WORK.</h2>
+          <span className="font-mono text-xs uppercase tracking-widest text-white/40">Business workflow system</span>
+        </div>
+
+        <a
+          href="/work/qaffy"
+          className="group grid overflow-hidden border border-white/10 md:grid-cols-2 hover:bg-white/5 transition-colors duration-300"
+        >
+          <div className="relative aspect-[16/10] min-h-[260px] border-b border-white/10 bg-black/40 md:border-b-0 md:border-r">
+            <Image
+              src="/qaffyassets/Google-Pixel-6-PRO-qaffy-theta.vercel.app.png"
+              alt="Qaffy customer laundry order interface"
+              fill
+              unoptimized
+              className="object-contain p-8 transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
+          <div className="flex flex-col justify-between p-6 md:p-10">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-widest text-white/40">02 / Selected work</p>
+              <h3 className="mt-6 font-display text-5xl uppercase tracking-tighter md:text-7xl">QAFFY.</h3>
+              <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-white/60">
+                A laundry operations platform connecting customers, logistics, vendors, and administration in one system.
+              </p>
+            </div>
+            <span className="mt-10 font-mono text-xs uppercase tracking-widest underline underline-offset-8 decoration-white/30 group-hover:decoration-white">
+              View case study ↗
+            </span>
+          </div>
+        </a>
+      </div>
       
       <div className="p-6 md:p-12 border-b border-white/10">
         <h2 className="font-display uppercase text-4xl md:text-6xl tracking-tighter">

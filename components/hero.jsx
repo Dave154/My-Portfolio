@@ -15,6 +15,7 @@ const kineticElements = [
 
 export default function ResponsiveHero() {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [hasScrolled, setHasScrolled] = useState(false);
   const containerRef = useRef(null);
   const { scrollY } = useScroll();
   const rotation = useTransform(scrollY, [0, 100], [0, -90]);
@@ -23,6 +24,7 @@ export default function ResponsiveHero() {
   const stickyX = useTransform(scrollY, [0, 100], ["24px", "12px"]);
 
   useEffect(() => {
+    const handleScroll = () => setHasScrolled(window.scrollY > 80);
     const handleMouseMove = (event) => {
       if (containerRef.current) {
         const rect = containerRef.current.getBoundingClientRect();
@@ -45,8 +47,12 @@ export default function ResponsiveHero() {
       }
     };
 
+    window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
   return (
@@ -58,6 +64,8 @@ export default function ResponsiveHero() {
           left: stickyX,
           transformOrigin: "left center"
         }}
+        animate={{ opacity: hasScrolled ? 1 : 0, x: hasScrolled ? 0 : -12 }}
+        transition={{ duration: 0.25 }}
         className="fixed z-[100] pointer-events-none mix-blend-difference font-sans uppercase text-xs md:text-sm tracking-widest text-white/80"
       >
         David Okpe — 2026
@@ -103,8 +111,7 @@ export default function ResponsiveHero() {
           return (
             <motion.div
               key={el.id}
-              className="absolute z-40 flex items-center justify-center pointer-events-auto"
-              style={{ left: "50%", top: "50%", transform: "translate(-50%, -50%)" }}
+              className="absolute left-1/2 top-1/2 z-40 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center pointer-events-auto md:left-[78%]"
               animate={{
                 x: cursorPos.x * 1.5 + el.offset.x,
                 y: cursorPos.y * 1.5 + el.offset.y,
@@ -118,36 +125,37 @@ export default function ResponsiveHero() {
         })}
 
         {/* PORTRAIT CONTAINER */}
-        <motion.div
-          className="absolute w-[300px] h-[300px] md:w-[400px] md:h-[400px] z-10 pointer-events-none"
-          style={{ left: "50%", top: "40%", transform: "translate(-50%, -50%)" }}
-          animate={{
-            x: cursorPos.x,
-            y: cursorPos.y,
-          }}
-          transition={{ type: "spring", stiffness: 100, damping: 20 }}
-        >
-          <div className="relative w-full h-full rounded-full border border-white/20 overflow-hidden group bg-[#050505]">
+        <div className="absolute left-1/2 top-[40%] z-10 h-[clamp(280px,34vw,460px)] w-[clamp(280px,34vw,460px)] -translate-x-1/2 -translate-y-1/2 pointer-events-none md:left-[78%]">
+          <motion.div
+            className="h-full w-full"
+            animate={{
+              x: cursorPos.x * 0.24,
+              y: cursorPos.y * 0.16,
+            }}
+            transition={{ type: "spring", stiffness: 100, damping: 20 }}
+          >
+            <div className="relative w-full h-full rounded-full border border-white/30 overflow-hidden group bg-[#050505] shadow-[0_18px_60px_rgba(0,0,0,0.35)]">
             <Image
               src="/dave-portrait.png" 
               alt="David Okpe portrait"
               fill
               unoptimized
               priority
-              className="object-cover scale-100 group-hover:scale-105 transition-transform duration-500 grayscale"
+              className="object-cover object-[center_44%] scale-[1.04] contrast-[1.06] saturate-[0.78] group-hover:scale-[1.08] transition-transform duration-500"
             />
-            <div className="absolute inset-0 mix-blend-overlay bg-black/20 pointer-events-none"></div>
-          </div>
-        </motion.div>
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.04)_35%,rgba(0,0,0,0.28)_100%)] pointer-events-none"></div>
+            </div>
+          </motion.div>
+        </div>
 
         {/* HERO TEXT */}
-        <div className="flex-1 flex flex-col justify-center p-6 z-30 relative overflow-hidden pointer-events-none">
+        <div className="flex-1 flex w-full flex-col justify-start p-6 pt-12 z-30 relative overflow-hidden pointer-events-none md:justify-center md:pt-6 lg:w-[68%] lg:pr-0">
           <div className="overflow-hidden">
             <motion.h1
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display uppercase text-[15vw] leading-[0.8] tracking-tighter mix-blend-difference"
+              className="font-display uppercase text-[9vw] leading-[0.84] tracking-tighter mix-blend-difference md:text-[8vw] lg:text-[9vw]"
             >
               BUILT AROUND
             </motion.h1>
@@ -158,7 +166,7 @@ export default function ResponsiveHero() {
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display uppercase text-[15vw] leading-[0.8] tracking-tighter text-white/40 mix-blend-difference"
+              className="font-display uppercase text-[9vw] leading-[0.84] tracking-tighter text-white/40 mix-blend-difference md:text-[8vw] lg:text-[9vw]"
             >
               REAL PROBLEMS.
             </motion.h1>

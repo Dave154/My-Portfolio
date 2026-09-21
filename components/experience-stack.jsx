@@ -168,9 +168,10 @@ const experienceData = [
   {
     id: "02",
     company: "RUUMIES",
-    role: "Full-Stack Developer",
+    role: "Software Developer — Contract",
     timeline: "2025 — Present",
     link: "https://ruumies.com",
+    summary: "Joined midway through development and worked across the existing system, including payments, bookings, and administration.",
     details: "Joined the development team midway through Ruumies, a platform connecting people looking for shared apartments and roommates. Worked across the existing system to bring the product through the remaining stages of development, including payment integration, booking flows, and the admin dashboard. Fixed inconsistencies and connected customer-facing and administrative workflows into a more complete product.",
     stack: [
       { name: "React", src: "/react.png" },
@@ -183,6 +184,7 @@ const experienceData = [
     company: "THEFOURDEVS",
     role: "Software Engineer",
     timeline: "2024 — Present",
+    summary: "Collaborated on client platforms including LearnPool, Gamaliel Consult, and Veer across product development and delivery.",
     details: "Collaborating within a specialized engineering squad to architect and ship diverse, high-complexity platforms. Core contributor to major client products including LearnPool (Web3 protocol), Gamaliel Consult, and Veer.",
     stack: [
       { name: "Next.js", src: "/next.png" },
@@ -195,6 +197,7 @@ const experienceData = [
     company: "INDEPENDENT",
     role: "Freelance Engineer & Designer",
     timeline: "2023 — Present",
+    summary: "Freelance and independent software projects across web applications, business systems, and product development.",
     details: "Delivering end-to-end client solutions. Blending technical execution with high-converting copywriting and UI/UX design to launch standalone products and brands.",
     stack: [
       { name: "React", src: "/react.png" },
@@ -242,14 +245,21 @@ export default function ExperienceStack() {
                 onClick={() => setOpenId(openId === job.id ? null : job.id)}
                 className="w-full p-6 lg:p-10 flex items-center justify-between text-left transition-colors duration-300 hover:bg-white/5"
               >
-                <div className="flex items-baseline gap-4 lg:gap-6">
+                <div className="flex min-w-0 flex-col items-start gap-2 lg:flex-row lg:items-baseline lg:gap-6">
                   <span className="font-mono text-xs lg:text-sm text-white/40">{job.id}</span>
-                  <h3 className="font-display text-3xl lg:text-5xl uppercase tracking-tighter">
-                    {job.company}
-                  </h3>
+                  <div>
+                    <h3 className="font-display text-3xl lg:text-5xl uppercase tracking-tighter">
+                      {job.company}
+                    </h3>
+                    {job.summary && (
+                      <p className="mt-2 max-w-xl font-sans text-sm leading-relaxed text-white/50 lg:text-base">
+                        {job.summary}
+                      </p>
+                    )}
+                  </div>
                 </div>
-                <div className="font-mono text-xl text-white/50 group-hover:text-white transition-colors duration-300">
-                  {openId === job.id ? "—" : "+"}
+                <div className="shrink-0 font-mono text-xs uppercase tracking-widest text-white/50 group-hover:text-white transition-colors duration-300">
+                  {openId === job.id ? "Close details" : "View details +"}
                 </div>
               </button>
 

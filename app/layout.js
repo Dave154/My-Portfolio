@@ -2,6 +2,7 @@ import { Space_Grotesk } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { siteConfig, siteUrl } from "@/lib/site";
+import PageLoader from "@/components/page-loader";
 
 // 1. Setup the Google Font for your body text
 const spaceGrotesk = Space_Grotesk({
@@ -108,6 +109,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${clashDisplay.variable} ${spaceGrotesk.variable} antialiased bg-[#0A0A0A] text-[#FAFAFA]`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+        <PageLoader />
         {children}
       </body>
     </html>
