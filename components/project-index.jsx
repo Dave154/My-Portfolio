@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const archiveProjects = [
   {
-    id: "01",
+    id: "04",
     title: "LEARNPOOL",
     description: "A knowledge platform built around verified daily facts and on-chain rewards.",
     stack: "Next.js ✦ Tailwind",
@@ -13,7 +13,7 @@ const archiveProjects = [
     status: "Live"
   },
   {
-    id: "02",
+    id: "05",
     title: "CLARIPDF",
     description: "An OCR-powered document tool for editing and working with image-based PDFs.",
     stack: "React ✦ Tailwind ✦ Shadcn",
@@ -21,7 +21,7 @@ const archiveProjects = [
     status: "Live"
   },
   {
-    id: "03",
+    id: "06",
     title: "CLAYCAVE",
     description: "A subscription management product combining recurring services and virtual cards.",
     stack: "Next.js ✦ Tailwind",
@@ -29,19 +29,11 @@ const archiveProjects = [
     status: "Live"
   },
   {
-    id: "04",
+    id: "07",
     title: "TROVEMART",
     description: "A self-service shopping experience with QR-based order verification.",
     stack: "React ✦ Redux ✦ Firebase",
     link: "https://trovemart.vercel.app",
-    status: "Live"
-  },
-  {
-    id: "05",
-    title: "GAMALIEL CONSULT",
-    description: "A consulting platform with a secure dashboard for role-specific internal work.",
-    stack: "Vue ✦ Tailwind",
-    link: "https://www.gamalielconsult.com/",
     status: "Live"
   }
 ];
@@ -52,7 +44,7 @@ export default function ProjectIndex() {
       <div className="border-b border-white/10 px-6 py-16 md:px-12 md:py-24">
         <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <h2 className="font-display uppercase text-5xl tracking-tighter md:text-7xl">SELECTED WORK.</h2>
-          <span className="font-mono text-xs uppercase tracking-widest text-white/40">Business workflow system</span>
+          <span className="font-mono text-xs uppercase tracking-widest text-white/40">Featured case studies</span>
         </div>
 
         <a
@@ -81,6 +73,33 @@ export default function ProjectIndex() {
             </span>
           </div>
         </a>
+
+        <a
+          href="/work/gamaliel-consult"
+          className="group mt-6 grid overflow-hidden border border-white/10 md:grid-cols-2 hover:bg-white/5 transition-colors duration-300"
+        >
+          <div className="relative order-2 aspect-[16/10] min-h-[260px] border-t border-white/10 bg-black/40 md:order-1 md:border-r md:border-t-0">
+            <Image
+              src="/gamalielassets/landing-desktop-1498x844.png"
+              alt="Gamaliel Consult public homepage with firm information and practice areas"
+              fill
+              unoptimized
+              className="object-contain p-6 transition-transform duration-500 group-hover:scale-105 md:p-8"
+            />
+          </div>
+          <div className="order-1 flex flex-col justify-between p-6 md:order-2 md:p-10">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-widest text-white/40">03 / Selected work</p>
+              <h3 className="mt-6 font-display text-5xl uppercase tracking-tighter md:text-7xl">GAMALIEL CONSULT.</h3>
+              <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-white/60">
+                A legal consultancy website and admin dashboard for managing consultation requests, articles, attorneys, practice areas, and homepage content.
+              </p>
+            </div>
+            <span className="mt-10 font-mono text-xs uppercase tracking-widest underline underline-offset-8 decoration-white/30 group-hover:decoration-white">
+              View case study ↗
+            </span>
+          </div>
+        </a>
       </div>
       
       <div className="p-6 md:p-12 border-b border-white/10">
@@ -101,8 +120,8 @@ export default function ProjectIndex() {
         {archiveProjects.map((project, index) => (
           <motion.a
             href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={project.link.startsWith("http") ? "_blank" : undefined}
+            rel={project.link.startsWith("http") ? "noopener noreferrer" : undefined}
             key={project.id}
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
