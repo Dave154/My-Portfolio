@@ -128,33 +128,28 @@ export default function QaffyPage() {
           </p>
         </div>
 
-        <div className="border-t border-white/15">
-          {orderSteps.map((step, index) => {
-            const textOrder = index % 2 === 0 ? "md:order-1" : "md:order-2";
-            const imageOrder = index % 2 === 0 ? "md:order-2" : "md:order-1";
-
-            return (
-              <article key={step.number} className="grid gap-6 border-b border-white/15 py-8 md:grid-cols-12 md:items-center md:gap-8 md:py-12 lg:gap-12 lg:py-16">
-                <div className={`md:col-span-4 ${textOrder}`}>
-                  <p className="mb-4 flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-white/40">
-                    <span className="text-white/70">{step.number}</span>
-                    <span>{step.role}</span>
-                  </p>
-                  <h3 className="max-w-sm text-balance font-display text-2xl uppercase leading-tight xl:text-3xl">{step.title}</h3>
-                  <p className="mt-4 max-w-md font-sans text-base leading-7 text-white/60">{step.description}</p>
-                  {step.detail && (
-                    <p className="mt-5 border-l border-white/30 pl-4 font-sans text-sm leading-6 text-white/50">{step.detail}</p>
-                  )}
+        <div className="grid gap-px border-l border-t border-white/10 bg-white/10 lg:grid-cols-2">
+          {orderSteps.map((step) => (
+            <article key={step.number} className="bg-[#050505] p-5 sm:p-6 md:p-8 lg:p-10">
+              <figure>
+                <div className="relative aspect-[16/10] overflow-hidden border border-white/10 bg-[#f7f8fa]">
+                  <Image src={step.image} alt={step.alt} fill unoptimized sizes="(min-width: 1024px) 50vw, 100vw" className="object-contain" />
                 </div>
-                <figure className={`md:col-span-8 ${imageOrder}`}>
-                  <div className="relative aspect-[16/10] overflow-hidden border border-white/10 bg-[#f7f8fa]">
-                    <Image src={step.image} alt={step.alt} fill unoptimized sizes="(min-width: 768px) 66vw, 100vw" className="object-contain" />
-                  </div>
-                  <figcaption className="mt-3 font-mono text-[10px] uppercase tracking-widest text-white/35">{step.role} VIEW / {step.number}</figcaption>
-                </figure>
-              </article>
-            );
-          })}
+                <figcaption className="mt-3 font-mono text-[10px] uppercase tracking-widest text-white/35">{step.role} VIEW / {step.number}</figcaption>
+              </figure>
+              <div className="mt-5 md:mt-6">
+                <p className="mb-3 flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-white/40">
+                  <span className="text-white/70">{step.number}</span>
+                  <span>{step.role}</span>
+                </p>
+                <h3 className="max-w-sm text-balance font-display text-2xl uppercase leading-tight xl:text-3xl">{step.title}</h3>
+                <p className="mt-4 max-w-md font-sans text-base leading-7 text-white/60">{step.description}</p>
+                {step.detail && (
+                  <p className="mt-5 border-l border-white/30 pl-4 font-sans text-sm leading-6 text-white/50">{step.detail}</p>
+                )}
+              </div>
+            </article>
+          ))}
         </div>
 
         <aside className="grid gap-6 border-b border-white/15 py-8 md:grid-cols-12 md:items-center md:gap-8 md:py-12 lg:gap-12 lg:py-16">
