@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { siteConfig, siteUrl } from "@/lib/site";
 import PageLoader from "@/components/page-loader";
+import { Analytics } from "@vercel/analytics/next"
 
 // 1. Setup the Google Font for your body text
 const spaceGrotesk = Space_Grotesk({
@@ -111,6 +112,7 @@ export default function RootLayout({ children }) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
         <PageLoader />
         {children}
+         <Analytics />
       </body>
     </html>
   );
